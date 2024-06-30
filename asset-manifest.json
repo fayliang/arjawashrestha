@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/arjawashrestha/static/css/main.998845ea.css",
+    "main.js": "/arjawashrestha/static/js/main.0558f2d8.js",
+    "static/media/diptych.jpeg": "/arjawashrestha/static/media/diptych.9819933a0ddaaeb99afc.jpeg",
+    "static/media/man walking.jpeg": "/arjawashrestha/static/media/man walking.29249026147542981a94.jpeg",
+    "static/media/girl.jpeg": "/arjawashrestha/static/media/girl.f3138d9e577a5bee41a5.jpeg",
+    "static/media/diptych 2.jpeg": "/arjawashrestha/static/media/diptych 2.f6b990f241ceef2161c9.jpeg",
+    "static/media/greencircles.png": "/arjawashrestha/static/media/greencircles.3aa4aebc3a3b63a9e0df.png",
+    "index.html": "/arjawashrestha/index.html",
+    "main.998845ea.css.map": "/arjawashrestha/static/css/main.998845ea.css.map",
+    "main.0558f2d8.js.map": "/arjawashrestha/static/js/main.0558f2d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.998845ea.css",
+    "static/js/main.0558f2d8.js"
+  ]
+}
