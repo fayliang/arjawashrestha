@@ -12,7 +12,7 @@ function App () {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/arjawashrestha">
         <Routes>
           <Route path="/" element={<Dashboard/>} />
           <Route path="/projects" element={<ProjectsPage/>} />
