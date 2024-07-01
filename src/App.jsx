@@ -12,7 +12,7 @@ function App () {
 
   return (
     <>
-      <BrowserRouter basename="/arjawashrestha">
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Dashboard/>} />
           <Route path="/projects" element={<ProjectsPage/>} />
