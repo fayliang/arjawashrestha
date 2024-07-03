@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 import DashboardNavbar from './Navbar';
 import Carousel from 'react-bootstrap/Carousel';
-import { MainBox, GamesContainer, PageContainer, Footer, NavContainer, Divider } from './DashboardContainer';
 
-function Dashboard({ token, setToken }) {
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import { CardContainer, DashboardContainer } from '../Components/DashboardContainers';
+
+function TriptychPage ({ token, setToken }) {
   const [isPreviousVisible, setIsPreviousVisible] = useState(false);
   const [isNextVisible, setIsNextVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -31,11 +37,11 @@ function Dashboard({ token, setToken }) {
   const handleNextClick = () => {
     setActiveIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1)); // Wrap around to first item if at the last item
   };
-
   return (
     <>
-      <DashboardNavbar token={token} setToken={setToken} />
-      <div style={{ display: 'flex',flexDirection: 'row',  justifyContent: 'center' }}>
+      {/* <MainBox> */}
+        <DashboardNavbar token={token} setToken={setToken}/>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
         <button
           className="carousel-btn left-btn"
           onMouseEnter={handlePreviousMouseEnter}
@@ -69,7 +75,7 @@ function Dashboard({ token, setToken }) {
         >
           <Carousel.Item>
             <img
-              src={require('./diptych.jpeg')}
+              src={require('./cropped man walking.jpeg')}
               alt="diptych"
               width="100%"
               height="100%"
@@ -83,7 +89,7 @@ function Dashboard({ token, setToken }) {
 
           <Carousel.Item>
             <img
-              src={require('./diptych 2.jpeg')}
+              src={require('./cropped wood.jpeg')}
               alt="diptych 2"
               width="100%"
               height="100%"
@@ -98,7 +104,7 @@ function Dashboard({ token, setToken }) {
 
           <Carousel.Item>
             <img
-              src={require('./girl.jpeg')}
+              src={require('./cropped trees.jpeg')}
               alt="girl"
               width="100%"
               height="100%"
@@ -125,8 +131,9 @@ function Dashboard({ token, setToken }) {
           />
         </button>
       </div>
+   {/* </MainBox> */}
     </>
   );
 }
 
-export default Dashboard;
+export default TriptychPage;

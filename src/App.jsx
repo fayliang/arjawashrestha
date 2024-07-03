@@ -3,7 +3,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProjectsPage from './ProjectsPage';
+import SinglesPage from './SinglesPage';
+import DiptychPage from './DiptychPage';
+import TriptychPage from './TriptychPage';
 import ContactPage from './ContactPage';
 import AboutPage from './AboutPage';
 import './App.css'
@@ -15,7 +17,9 @@ function App () {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Dashboard/>} />
-          <Route path="/projects" element={<ProjectsPage/>} />
+          <Route path="/singles" element={<SinglesPage/>} />
+          <Route path="/diptych" element={<DiptychPage/>} />
+          <Route path="/triptych" element={<TriptychPage/>} />
           <Route path="/about" element={<AboutPage/>} />
           <Route path="/contact" element={<ContactPage/>} />
           </Routes>

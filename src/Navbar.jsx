@@ -46,13 +46,13 @@ function DashboardNavbar({ token, setToken }) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-              <Nav.Link className='nav-links' style={{ marginLeft: '10px', fontWeight: '' }} as={Link} to="/projects">
+              <Nav.Link className='nav-links' style={{ marginLeft: '10px', fontWeight: '' }} as={Link} to="/singles">
                 Singles
               </Nav.Link>
-              <Nav.Link className='nav-links' style={{ marginLeft: '10px', fontWeight: '' }} as={Link} to="/projects">
+              <Nav.Link className='nav-links' style={{ marginLeft: '10px', fontWeight: '' }} as={Link} to="/diptych">
                 Diptych
               </Nav.Link>
-              <Nav.Link className='nav-links' style={{ marginLeft: '10px', fontWeight: '' }} as={Link} to="/projects">
+              <Nav.Link className='nav-links' style={{ marginLeft: '10px', fontWeight: '' }} as={Link} to="/triptych">
                 Triptych
               </Nav.Link>
               </Dropdown.Menu>
