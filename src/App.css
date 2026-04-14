@@ -156,10 +156,22 @@ p {
   .desktop-nav {
     display: none !important;
   }
+}
+.mobile-menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 28px;
 
-  .mobile-menu-btn {
-    display: block;
-  }
+  color: black; /* or your desired color */
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  outline: none;
+  box-shadow: none;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (min-width: 801px) {
