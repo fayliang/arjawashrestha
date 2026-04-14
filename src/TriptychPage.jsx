@@ -71,15 +71,15 @@ function TriptychPage({ token, setToken }) {
           // }}
         >
           <Carousel.Item>
-            <img src={require('./cropped man walking.jpeg')} width="100%" height="100%" />
+            <img src={require('./cropped man walking.jpeg')} width="100%" height="100%"alt="Diptych artwork 1" />
           </Carousel.Item>
 
           <Carousel.Item>
-            <img src={require('./cropped wood.jpeg')} width="100%" height="100%" />
+            <img src={require('./cropped wood.jpeg')} width="100%" height="100%" alt="Diptych artwork 1"/>
           </Carousel.Item>
 
           <Carousel.Item>
-            <img src={require('./cropped trees.jpeg')} width="100%" height="100%" />
+            <img src={require('./cropped trees.jpeg')} width="100%" height="100%" alt="Diptych artwork 1"/>
           </Carousel.Item>
         </Carousel>
 
