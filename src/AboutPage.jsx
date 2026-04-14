@@ -19,14 +19,23 @@ function AboutPage ({ token, setToken }) {
     <>
       {/* <MainBox> */}
         <DashboardNavbar token={token} setToken={setToken}/>
-        <div style={{display: 'flex', flexDirection: 'row', alignContent: 'space-around'}}>
-          <div style={{ whiteSpace: 'nowrap', marginLeft: '75px', display: 'flex', flexDirection: 'column', justifyContent: 'center', rowGap: '15px'}}>
-            <h1>Arjav Shrestha</h1>
-            <p>Freelance photographer<br></br>Based in Sydney, Australia<br></br>Loves a good double choc muffin from Coles</p>
-          </div>
-          <img src={require('./man walking.jpeg')} alt="Green Circle Icon" width="30%" height="25%" style={{marginTop: '5vh', marginLeft:'30vw'}}/>
-        
-        </div>
+        <div className="about-container">
+
+  <div className="about-text">
+    <h1>Arjav Shrestha</h1>
+    <p>
+      Freelance photographer<br />
+      Based in Sydney, Australia<br />
+      Loves a good double choc muffin from Coles
+    </p>
+  </div>
+   <img
+    src={require('./man walking.jpeg')}
+    alt="portrait"
+    className="about-image"
+  />
+
+</div>
    {/* </MainBox> */}
     </>
   );

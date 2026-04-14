@@ -1,137 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import Nav from 'react-bootstrap/Nav';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import DashboardNavbar from './Navbar';
 import Carousel from 'react-bootstrap/Carousel';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { CardContainer, DashboardContainer } from '../Components/DashboardContainers';
-
-function TriptychPage ({ token, setToken }) {
-  const [isPreviousVisible, setIsPreviousVisible] = useState(false);
-  const [isNextVisible, setIsNextVisible] = useState(false);
+function TriptychPage({ token, setToken }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(false);
 
-  const handlePreviousMouseEnter = () => {
-    setIsPreviousVisible(true);
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+
+    if (x < rect.width / 2) {
+      setShowLeft(true);
+      setShowRight(false);
+    } else {
+      setShowLeft(false);
+      setShowRight(true);
+    }
   };
 
-  const handlePreviousMouseLeave = () => {
-    setIsPreviousVisible(false);
+  const handleMouseLeave = () => {
+    setShowLeft(false);
+    setShowRight(false);
   };
 
-  const handleNextMouseEnter = () => {
-    setIsNextVisible(true);
+  const prev = () => {
+    setActiveIndex((p) => (p === 0 ? 2 : p - 1));
   };
 
-  const handleNextMouseLeave = () => {
-    setIsNextVisible(false);
+  const next = () => {
+    setActiveIndex((p) => (p === 2 ? 0 : p + 1));
   };
 
-  const handlePreviousClick = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? 2 : prevIndex - 1)); // Wrap around to last item if at the first item
-  };
-
-  const handleNextClick = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1)); // Wrap around to first item if at the last item
-  };
   return (
     <>
-      {/* <MainBox> */}
-        <DashboardNavbar token={token} setToken={setToken}/>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button
-          className="carousel-btn left-btn"
-          onMouseEnter={handlePreviousMouseEnter}
-          onMouseLeave={handlePreviousMouseLeave}
-          onClick={handlePreviousClick}
-        >
+      <DashboardNavbar token={token} setToken={setToken} />
+
+      {/* WRAPPER (NO LAYOUT CHANGES) */}
+      <div
+        style={{ display: 'flex', justifyContent: 'center' }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        classname='carousel-wrapper'
+      >
+
+        {/* LEFT ARROW */}
+        <button className="carousel-btn left-btn" onClick={prev}>
           <img
-            className="prev-btn"
             src="https://www.svgrepo.com/show/135316/left-arrow.svg"
-            alt="prev btn"
-            style={{ display: isPreviousVisible ? 'block' : 'none' }}
+            alt="prev"
+            style={{ opacity: showLeft ? 1 : 0 }}
           />
         </button>
+
+        {/* CAROUSEL */}
         <Carousel
           activeIndex={activeIndex}
           interval={null}
           controls={false}
           indicators={false}
           fade
-          // onSelect={() => {}}
-          style={{
-            // marginLeft: '20vw',
-            // marginBottom: '15px',
-            // border: '1px solid black',
-            marginTop:'7vh',
-            width: '60vw',
-            height: '80vh',
-            display: 'flex',
-            justifyContent: 'center',
-          }}
+          classname='carousel-box'
+          // style={{
+          //   marginTop: '7vh',
+          //   width: '60vw',
+          //   height: '80vh',
+          //   display: 'flex',
+          //   justifyContent: 'center',
+          // }}
         >
           <Carousel.Item>
-            <img
-              src={require('./cropped man walking.jpeg')}
-              alt="diptych"
-              width="100%"
-              height="100%"
-              objectFit='cover' 
-            />
-            <Carousel.Caption>
-              {/* <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-            </Carousel.Caption>
+            <img src={require('./cropped man walking.jpeg')} width="100%" height="100%" />
           </Carousel.Item>
 
           <Carousel.Item>
-            <img
-              src={require('./cropped wood.jpeg')}
-              alt="diptych 2"
-              width="100%"
-              height="100%"
-              objectFit='cover' 
-              // style={{marginTop: '5vh'}}
-            />
-            <Carousel.Caption>
-              {/* <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
-            </Carousel.Caption>
+            <img src={require('./cropped wood.jpeg')} width="100%" height="100%" />
           </Carousel.Item>
 
           <Carousel.Item>
-            <img
-              src={require('./cropped trees.jpeg')}
-              alt="girl"
-              width="100%"
-              height="100%"
-              // objectFit='cover' 
-              objectFit='cover' 
-            />
-            <Carousel.Caption>
-              {/* <h3>Third slide label</h3> */}
-              {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
-            </Carousel.Caption>
+            <img src={require('./cropped trees.jpeg')} width="100%" height="100%" />
           </Carousel.Item>
         </Carousel>
-        <button
-          className="carousel-btn right-btn"
-          onMouseEnter={handleNextMouseEnter}
-          onMouseLeave={handleNextMouseLeave}
-          onClick={handleNextClick}
-        >
+
+        {/* RIGHT ARROW */}
+        <button className="carousel-btn right-btn" onClick={next}>
           <img
-            className="next-btn"
             src="https://www.svgrepo.com/show/153628/right-thin-arrow-angle.svg"
-            alt="next btn"
-            style={{ display: isNextVisible ? 'block' : 'none' }}
+            alt="next"
+            style={{ opacity: showRight ? 1 : 0 }}
           />
         </button>
+
       </div>
-   {/* </MainBox> */}
     </>
   );
 }

@@ -20,11 +20,31 @@ function ContactPage ({ token, setToken }) {
       {/* <MainBox> */}
         <DashboardNavbar token={token} setToken={setToken}/>
         {/* <div style={{display: 'flex', flexDirection: 'row', justifyItems: 'space-evenly'}}> */}
-          <div style={{ whiteSpace: 'nowrap', marginTop: '30vh', marginLeft: '75px', display: 'flex', flexDirection: 'column', justifyContent: 'center', rowGap: '15px'}}>
-            <h1>Let's get in touch</h1>
-            <p>Email</p>
-            <p>Instagram</p>
-          </div>
+          <div className="contact-container">
+  <div className="contact-text">
+    <h1>Let's get in touch</h1>
+
+    <p>
+      <a
+        href="mailto:arjawa.shrestha@team.telstra.com"
+        className="contact-link"
+      >
+        Email
+      </a>
+    </p>
+
+    <p>
+      <a
+        href="https://instagram.com/arjawaphotography"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-link"
+      >
+        Instagram
+      </a>
+    </p>
+  </div>
+</div>
           {/* <img src={require('./man walking.jpeg')} alt="Green Circle Icon" width="30%" height="25%" style={{marginTop: '5vh', marginLeft:'0vw'}}/> */}
         
         {/* </div> */}
