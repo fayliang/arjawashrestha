@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/arjawashrestha/static/css/main.3e2e0f10.css",
+    "main.css": "/arjawashrestha/static/css/main.df1adee2.css",
     "main.js": "/arjawashrestha/static/js/main.3a75a778.js",
     "static/media/cropped wood.jpeg": "/arjawashrestha/static/media/cropped wood.301eea437233cf0f84c2.jpeg",
     "static/media/cropped trees.jpeg": "/arjawashrestha/static/media/cropped trees.5fefff593d19e53091aa.jpeg",
@@ -10,11 +10,11 @@
     "static/media/cropped man walking.jpeg": "/arjawashrestha/static/media/cropped man walking.bba82b6e38fb203e707f.jpeg",
     "static/media/diptych 2.jpeg": "/arjawashrestha/static/media/diptych 2.f6b990f241ceef2161c9.jpeg",
     "index.html": "/arjawashrestha/index.html",
-    "main.3e2e0f10.css.map": "/arjawashrestha/static/css/main.3e2e0f10.css.map",
+    "main.df1adee2.css.map": "/arjawashrestha/static/css/main.df1adee2.css.map",
     "main.3a75a778.js.map": "/arjawashrestha/static/js/main.3a75a778.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e2e0f10.css",
+    "static/css/main.df1adee2.css",
     "static/js/main.3a75a778.js"
   ]
 }
