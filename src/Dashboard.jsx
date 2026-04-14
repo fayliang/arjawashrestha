@@ -54,6 +54,7 @@ const handleMouseLeave = () => {
           <img
             src="https://www.svgrepo.com/show/135316/left-arrow.svg"
             style={{ opacity: showLeft ? 1 : 0 }}
+            alt='img'
           />
         </button>
 
@@ -67,15 +68,15 @@ const handleMouseLeave = () => {
           className="carousel-box"
         >
           <Carousel.Item>
-            <img src={require('./diptych.jpeg')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={require('./diptych.jpeg')} alt='img'style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </Carousel.Item>
 
           <Carousel.Item>
-            <img src={require('./diptych 2.jpeg')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={require('./diptych 2.jpeg')} alt='img' style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </Carousel.Item>
 
           <Carousel.Item>
-            <img src={require('./girl.jpeg')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={require('./girl.jpeg')} alt='img' style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </Carousel.Item>
         </Carousel>
 
@@ -84,6 +85,7 @@ const handleMouseLeave = () => {
           <img
             src="https://www.svgrepo.com/show/153628/right-thin-arrow-angle.svg"
             style={{ opacity: showRight ? 1 : 0 }}
+            alt='img'
           />
         </button>
 
