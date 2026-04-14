@@ -71,15 +71,15 @@ function DiptychPage({ token, setToken }) {
           // }}
         >
           <Carousel.Item>
-            <img src={require('./diptych.jpeg')} width="100%" height="100%" />
+            <img src={require('./diptych.jpeg')} width="100%" height="100%" alt="Diptych artwork 1"/>
           </Carousel.Item>
 
           <Carousel.Item>
-            <img src={require('./diptych 2.jpeg')} width="100%" height="100%" />
+            <img src={require('./diptych 2.jpeg')} width="100%" height="100%" alt="Diptych artwork 1"/>
           </Carousel.Item>
 
           <Carousel.Item>
-            <img src={require('./girl.jpeg')} width="100%" height="100%" />
+            <img src={require('./girl.jpeg')} width="100%" height="100%" alt="Diptych artwork 1"/>
           </Carousel.Item>
         </Carousel>
 
